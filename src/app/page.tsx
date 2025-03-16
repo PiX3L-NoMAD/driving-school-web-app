@@ -1,101 +1,146 @@
-import Image from "next/image";
+import Image from 'next/image';
+import {
+  FaCarSide,
+  FaSnowflake,
+  FaRoad,
+} from 'react-icons/fa';
+import PricingSection from './components/PricingSection';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      {/* Hero Section */}
+      <section className='relative min-h-screen place-content-center'>
+        {/* Fullscreen Hero Image */}
+        <div className='absolute inset-0'>
+          <Image
+            src='/peter-van-der-meulen-wzJcW1MNRBw-unsplash.jpg'
+            alt='svensk gata, en solig dag'
+            fill
+            className='object-cover'
+          />
+          <div className='absolute inset-0 bg-white opacity-10'></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Centered Content */}
+        <div className='relative z-10 flex flex-col items-center justify-center text-center text-white px-4'>
+          <h1 className='text-5xl md:text-6xl font-bold mb-4'>
+            Välkommen till <br /> vår trafikskola
+          </h1>
+          <p className='text-xl md:text-2xl mb-8 max-w-2xl'>
+            Lär dig köra tryggt och säkert med
+            våra certifierade instruktörer
+          </p>
+          <div className='flex flex-col sm:flex-row gap-4'>
+            <a
+              href='/courses'
+              className='bg-blue-400 hover:bg-blue-300 transition-colors text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg'
+            >
+              Boka nu
+            </a>
+            <a
+              href='/contact'
+              className='bg-yellow-500 hover:bg-yellow-400 transition-colors text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg'
+            >
+              Kontakta oss
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Cards Section */}
+      <section className='py-16 bg-yellow-500'>
+        <div className='container mx-auto px-4'>
+          <h2 className='text-4xl font-bold text-center mb-12'>
+            Vi lär dig hantera alla situationer
+          </h2>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+            {/* Card 1 */}
+            <div className='bg-white rounded-xl shadow-md overflow-hidden'>
+              <Image
+                src='/fredrik-ohlander-zqTl8Sm_Vkg-unsplash.jpg'
+                alt='Två killar som puttar en gammal bil i snö'
+                width={400}
+                height={250}
+                className='object-cover w-full h-48'
+              />
+              <div className='p-6'>
+                <div className='flex items-center gap-2 text-blue-600 mb-2'>
+                  <FaSnowflake size={24} />
+                  <span className='font-semibold'>
+                    Snöiga situationer
+                  </span>
+                </div>
+                <p className='text-gray-700'>
+                  Lär dig att hantera vinterväglag
+                  med praktiska övningar och
+                  expertinstruktion.
+                </p>
+              </div>
+            </div>
+            {/* Card 2 */}
+            <div className='bg-white rounded-xl shadow-md overflow-hidden'>
+              <Image
+                src='/benoit-deschasaux-NOHGv25yg-A-unsplash.jpg'
+                alt='Vit bil parkerad vid en skogsväg'
+                width={400}
+                height={250}
+                className='object-cover w-full h-48'
+              />
+              <div className='p-6'>
+                <div className='flex items-center gap-2 text-blue-600 mb-2'>
+                  <FaRoad size={24} />
+                  <span className='font-semibold'>
+                    Vägkännedom
+                  </span>
+                </div>
+                <p className='text-gray-700'>
+                  Vi visar dig de bästa
+                  strategierna för att navigera på
+                  både landsbygd och stadsområden.
+                </p>
+              </div>
+            </div>
+            {/* Card 3 */}
+            <div className='bg-white rounded-xl shadow-md overflow-hidden'>
+              <Image
+                src='/happy-woman-listening-music.jpg'
+                alt='Glad ung kvinna med bilar i bakgrunden'
+                width={400}
+                height={250}
+                className='object-cover w-full h-48'
+              />
+              <div className='p-6'>
+                <div className='flex items-center gap-2 text-blue-600 mb-2'>
+                  <FaCarSide size={24} />
+                  <span className='font-semibold'>
+                    Säkra färdigheter
+                  </span>
+                </div>
+                <p className='text-gray-700'>
+                  Vår undervisning fokuserar på
+                  att göra dig bekväm och säker
+                  bakom ratten i alla
+                  trafiksituationer.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <PricingSection />
+        {/* <svg
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 1440 320'
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <path
+            fill='#fde047'
+            d='M0,96L80,133.3C160,171,320,245,480,250.7C640,256,800,192,960,181.3C1120,171,1280,213,1360,234.7L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z'
+          ></path>
+        </svg> */}
+      </section>
+    </>
   );
 }

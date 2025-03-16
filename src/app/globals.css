@@ -1,21 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.swiper-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* or any gap value you prefer */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* Remove extra space caused by the slick-track */
+.slick-track {
+  height: auto !important; /* Ensures the track adjusts to the height of the slides */
+  display: flex; /* Ensures flex layout for smoother flow */
+  flex-wrap: nowrap; /* Prevent wrapping, make sure the slides stay in one line */
+  margin-bottom: 0; /* Ensure no extra margin at the bottom */
+}
+
+/* Ensure .slick-slide has no bottom margin */
+.slick-slide {
+  margin-bottom: 0 !important; /* Remove any bottom margin */
+  height: auto !important; /* Allow the slide height to adjust to content */
+}
+
+/* Ensure the entire slick-slider container behaves as expected */
+.slick-slider {
+  padding-bottom: 0 !important; /* Remove any extra bottom padding */
+}
+
+/* Reduce the space between the pagination dots */
+.slick-dots {
+  margin-top: 10px !important; /* Adjust to decrease space between dots and slides */
+}
+
+/* Ensure that the slides have space between them */
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  margin-right: 2rem; /* Adjust this margin as needed */
+}
+
+/* Prevent the cards from becoming too narrow */
+.slick-slide > div {
+  min-width: 250px; /* Adjust this width as needed */
+}
+
+/* Move the button below the slider */
+#pricing {
+  position: relative;
+  
+}
+
+#pricing .cta-button {
+  position: relative;
+  bottom: -50px; /* Adjust this value to bring the button closer */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px; /* Ensure there’s some space */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
