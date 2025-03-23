@@ -37,13 +37,13 @@ export default function Navbar() {
         >
           <Image
             src='/3Z_2103.w026.n002.283B.p900.283.jpg'
-            alt='Svensk Trafikskola Logo'
+            alt='Janilees Driving School Logo'
             width={50}
             height={50}
             className='mr-2'
           />
           <span className='text-2xl font-semibold text-gray-900'>
-            Svensk Trafikskola
+            Janilees Driving School
           </span>
         </Link>
         <div className='space-x-6 text-lg'>
@@ -51,19 +51,19 @@ export default function Navbar() {
             href='/about'
             className='text-gray-800 hover:text-gray-600'
           >
-            Om oss
+            About
           </Link>
           <Link
             href='/courses'
             className='text-gray-800 hover:text-gray-600'
           >
-            Kurser
+            Courses
           </Link>
           <Link
             href='/contact'
             className='text-gray-800 hover:text-gray-600'
           >
-            Kontakt
+            Contact Us
           </Link>
         </div>
       </div>

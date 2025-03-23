@@ -22,13 +22,13 @@ export default function Contact() {
   return (
     <div className='max-w-md mx-auto'>
       <h2 className='text-2xl font-bold'>
-        Kontakta oss
+        Contact us
       </h2>
       <form className='mt-4'>
         <input
           type='text'
           name='name'
-          placeholder='Namn'
+          placeholder='Name'
           value={form.name}
           onChange={handleChange}
           className='w-full p-2 border rounded mb-2'
@@ -36,20 +36,20 @@ export default function Contact() {
         <input
           type='email'
           name='email'
-          placeholder='E-post'
+          placeholder='E-mail'
           value={form.email}
           onChange={handleChange}
           className='w-full p-2 border rounded mb-2'
         />
         <textarea
           name='message'
-          placeholder='Meddelande'
+          placeholder='Message'
           value={form.message}
           onChange={handleChange}
           className='w-full p-2 border rounded mb-2'
         />
         <button className='bg-blue-600 text-white px-4 py-2 rounded'>
-          Skicka
+          Send
         </button>
       </form>
     </div>
